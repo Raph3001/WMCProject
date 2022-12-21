@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "John",
+    "age": 5,
+    "wishes": [
+      {
+        "id": 1,
+        "name": "Car",
+        "url": "https://www.autobild.de/artikel/apple-car-2024-auto-elektroSTXhyundai-kia-reichweite-18698301.html",
+        "img_url": "https://i.auto-bild.de/ir_img/2/7/0/5/0/3/7/2-APPLE-CAR-2-iMac-G3-92c755da09344228.jpg?impolicy=leadteaser"
+      },
+      {
+        "id": 2,
+        "name": "Bike",
+        "url": "https://www.wired.com/review/jackrabbit-bike/",
+        "img_url":
+        "https://media.wired.com/photos/61afb902c2f5f4d2aaf1c249/master/w_1600,c_limit/Gear-Jackbrabbit-Bike-Lifestyle-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Theo",
+    "age": 8,
+    "wishes": [
+      {
+        "id": 3,
+        "name": "Switch",
+        "url": "https://www.nintendo.at/Hardware/Nintendo-Switch-Familie/NintendoSTXSwitch/Nintendo-Switch-1148779.html",
+        "img_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatics.vrutal.com%2Fm%2F091f%2F091fe50192fad78c507d79ccb40c006d_thumb_fb.jpg&f=1&nofb=1&ipt=c30bb1b6c2d3f3ef4300b8162b2660b3cc2d3182838b0f1e8722e9f07e05ef93&ipo=images"
+      }
+    ]
+  }
+]
