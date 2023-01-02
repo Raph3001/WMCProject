@@ -27,14 +27,14 @@ const showChildsList = () => {
             const table = (document.getElementById('childTable') as HTMLTableElement);
             const trElement = document.createElement("tr");
             trElement.setAttribute("class",  "heading");
-            trElement.innerHTML = `<tr><td>Name</td><td>Age</td></tr>`;
+            trElement.innerHTML = `<td>Name</td><td>Age</td>`;
             table.appendChild(trElement);
             childs.forEach(elem => {
                 const trElem = document.createElement("tr");
                 trElem.setAttribute("class",  "amog");
-                trElem.innerHTML = `<td>${elem.name}</td><td>${elem.age}</td>`;
+                trElem.innerHTML += `<td>${elem.name}</td><td>${elem.age}</td>`;
                 trElem.addEventListener("click", () => fillTable(elem.id));
-                trElem.setAttribute("id", elem.id + "");
+                //trElem.setAttribute("id", elem.id + "");
                 table.appendChild(trElem);
             });
         });

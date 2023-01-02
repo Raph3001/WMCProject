@@ -19,16 +19,21 @@ const loadList = () => {
 const addChild = () => {
     let url = './children';
 
-    if ((document.querySelector('#tfChildName') as HTMLInputElement).value.split(" ").length > 1) {
+    /*if ((document.querySelector('#tfChildName') as HTMLInputElement).value.split(" ").length > 1) {
         alert("No successful! Pplease dont use Space in the names!!");
+        return;
+    }*/
+
+    if (+((document.getElementById('tfAge') as HTMLInputElement).value) > 116) {
+        alert("Age too high!");
         return;
     }
 
     // @ts-ignore
     const newChild: IChild = {
         id:0,
-        name:(document.querySelector('#tfChildName') as HTMLInputElement).value,
-        age:+(document.querySelector('#tfAge') as HTMLInputElement).value,
+        name:(document.getElementById('tfChildName') as HTMLInputElement).value,
+        age:+(document.getElementById('tfAge') as HTMLInputElement).value,
         wishes:[]
     }
 
@@ -54,10 +59,9 @@ const addChild = () => {
     
 }
 
-const addWish = () => {
-    const name = (document.querySelector('#childs') as HTMLSelectElement).value;
+    const addWish = () => {
+    const name = (document.getElementById('childs') as HTMLSelectElement).value;
 
-    let childs: IChild[] = [];
     let id:number = 0;
     fetch('./wishlist/children')
         .then(c => {
@@ -65,14 +69,14 @@ const addWish = () => {
         })
         .then(data => {
             for (let i = 0; i < data.length; i++) {
-                if (data[i].name === name) id = data[i].id;
+                if (data[i].name.includes(name)) id = data[i].id;
             }
             const url = `./children/${id}/wishes`;
             const newWish: IWish = {
                 id:0,
-                name:(document.querySelector('#tfPresentName') as HTMLInputElement).value,
-                url:(document.querySelector('#tfURL') as HTMLInputElement).value,
-                img_url:(document.querySelector('#tfImgURL') as HTMLInputElement).value,
+                name:(document.getElementById('tfPresentName') as HTMLInputElement).value,
+                url:(document.getElementById('tfURL') as HTMLInputElement).value,
+                img_url:(document.getElementById('tfImgURL') as HTMLInputElement).value,
             }
 
             const init = {
@@ -93,11 +97,6 @@ const addWish = () => {
                     alert("Wish not success fully added!");
                 });
         });
-
-
-
-
-
 }
 
 onload = () => {
